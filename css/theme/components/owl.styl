@@ -1,0 +1,22 @@
+.owl
+    &-prev, &-next
+        display: flex
+        justify-content: center
+        align-items: center
+        background: none
+        box-shadow: none
+        color: var(--color-text-gray)
+        text-indent: 0
+        opacity: 1
+
+        .ico
+            width: 16px
+            height: 20px
+            fill: currentColor
+
+        &:before
+            display: none
+
+        &:hover
+            background: @background
+            color: var(--primary)

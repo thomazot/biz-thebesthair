@@ -4,6 +4,11 @@
  * Update:   05/2016
  */
 
+const navigationText = [
+    `<svg class="ico z-prev"><use xlink:href="#z-prev" /></svg>`,
+    `<svg class="ico z-next"><use xlink:href="#z-next" /></svg>`,
+]
+
 ;(function ($) {
     $.fn.neonTheme = function (options) {
         var neon = $.extend({}, $.fn.neonTheme.custom, options)
@@ -781,7 +786,7 @@ function default_categories_carrossel() {
     if (menu.find('.li--0').length > 0) {
         menu.find('.ul--0').owlCarousel({
             navigation: true,
-            navigationText: ['?', '?'],
+            navigationText: navigationText,
             pagination: false,
             afterInit: function () {
                 menu.addClass('loaded')
@@ -817,7 +822,7 @@ function default_carrossel_produtos() {
 
                 $j(el).owlCarousel({
                     navigation: true,
-                    navigationText: ['?', '?'],
+                    navigationText: navigationText,
                     items: 5,
                     itemsCustom: [
                         [0, 1],
@@ -908,9 +913,10 @@ function default_carrossel_brands() {
     if (marcas.length) {
         marcas.each(function (i, el) {
             $j(el).owlCarousel({
+                items: 7,
                 itemsScaleUp: true,
                 navigation: true,
-                navigationText: ['?', '?'],
+                navigationText: navigationText,
                 pagination: false,
             })
         })
@@ -929,7 +935,7 @@ function default_carrossel_jointsales() {
                 singleItem: true,
                 itemScaleUp: true,
                 navigation: true,
-                navigationText: ['?', '?'],
+                navigationText: navigationText,
                 autoHeight: true,
                 beforeMove: function () {
                     if (typeof $j.fn.lazyload != 'undefined') {
@@ -1250,6 +1256,14 @@ $j.fn.neonTheme.custom = {
             selector: '.frete .frete__content .input-box label',
             mode: 'prepend',
             ratio: false,
+        },
+        'z-prev': {
+            selector: '.owl-prev',
+            mode: 'html',
+        },
+        'z-next': {
+            selector: '.owl-next',
+            mode: 'html',
         },
     },
 }

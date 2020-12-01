@@ -1,0 +1,9 @@
+<div class="products-and-banner">
+    <h3 class="products-and-banner__title">Cabelos</h3>
+    <div class="products-and-banner__banner">
+        {{widget type="banner/widget_banner" template="banner/banner.phtml" banner="tbh-banner-one"}}
+    </div>
+    <div class="products-and-banner__products">
+        {{widget type="interface/widget_produtos" template="interface/widgets/produtos.phtml" identificador="productscabelos" carrossel="1" limite="12" exibir_sem_estoque="1" exibir_sem_imagem="1" markup="<h2 class='products__header'><a href='@url' itemprop='url' title='Mais detalhes' class='product-link'><span class='products__image product-image'>@foto(260x260)</span></a> @bt(listadesejos '<svg class='ico z-heart'><use xlink:href='#z-heart' /></svg>') </h2><div class='products__main'><a href='@url' title='@nome(60)' class='products__name'>@nome</a> @if(is_disponivel) @preco @preco(parcelado) @else(is_disponivel) <div class='esgotado'>Produto Esgotado</div> @endif(is_disponivel) @selos </div><div class='products__actions'> @bt(comprar 'Comprar') </div>"}}
+    </div>
+</div>
