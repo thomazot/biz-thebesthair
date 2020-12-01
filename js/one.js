@@ -829,7 +829,6 @@ function default_carrossel_produtos() {
                         [568, 2],
                         [768, 3],
                         [1024, 4],
-                        [1270, 5],
                     ],
                     beforeMove: function () {
                         if (typeof $j.fn.lazyload != 'undefined') {

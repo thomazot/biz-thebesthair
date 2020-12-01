@@ -12146,6 +12146,124 @@ body {
   }
 }
 
+.instagram {
+  background: var(--primary);
+  color: var(--primary-contrast);
+}
+.instagram__container {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: calc(100% - 32px);
+  width: 76rem;
+  padding: 2.81rem 0;
+}
+@media (min-width: 993px) {
+  .instagram__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.instagram__header {
+  padding-bottom: 2.5rem;
+  text-align: center;
+  font-weight: 500;
+  font-size: 0.88rem;
+}
+.instagram__header a {
+  display: block;
+  padding-bottom: 0.94rem;
+  color: currentColor;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+.instagram__header p {
+  margin: 0 auto;
+  max-width: 100%;
+  width: 15rem;
+}
+.instagram__main {
+  position: relative;
+  max-width: 100%;
+  width: 47.13rem;
+  height: 31.13rem;
+}
+@media (max-width: 568px) {
+  .instagram__main {
+    height: 15.56rem;
+  }
+}
+.instagram__main a {
+  display: block;
+  transition: all 0.2s ease-in-out;
+}
+.instagram__main a img {
+  width: 100%;
+  height: 100%;
+  transition: all 0.2s ease-in-out;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.instagram__main a:nth-child(1) {
+  position: absolute;
+  top: 10.040160642570282%;
+  left: 0;
+  z-index: 2;
+  width: 35.0132625994695%;
+  height: 48.393574297188756%;
+}
+.instagram__main a:nth-child(2) {
+  position: absolute;
+  top: 18.072289156626507%;
+  left: 50%;
+  z-index: 1;
+  width: 39.12466843501326%;
+  height: 65.26104417670683%;
+  transform: translateX(-50%);
+}
+.instagram__main a:nth-child(3) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 3;
+  width: 33.95225464190981%;
+  height: 51.00401606425703%;
+}
+.instagram__main a:nth-child(4) {
+  position: absolute;
+  bottom: 4.016064257028113%;
+  left: 4.016064257028113%;
+  z-index: 2;
+  width: 28.514588859416445%;
+  height: 42.971887550200805%;
+}
+.instagram__main a:nth-child(5) {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  width: 30.50397877984085%;
+  height: 49.59839357429719%;
+}
+@media (min-width: 993px) {
+  .instagram__main a:hover {
+    z-index: 10;
+  }
+  .instagram__main a:hover img {
+    transform: scale(1.05);
+  }
+}
+/*
+caixa 754 x 498
+
+
+1 - 264 x 241
+2 - 280 x 317
+3 - 256 x 254
+4 - 215 x 214
+5 - 230 x 247
+*/
+
 .header .logo img,
 .header .logo svg {
   height: 2.06rem;
@@ -12340,8 +12458,8 @@ body {
 }
 .products__case .link-wishlist {
   position: absolute;
-  top: 0.63rem;
-  right: 0.63rem;
+  top: 0;
+  right: 0;
   display: flex;
   justify-content: center;
   align-items: center;
