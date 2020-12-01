@@ -1,0 +1,45 @@
+.mycart
+    &__header
+        position: relative
+        height: 55px
+        color: var(--primary)
+        font-weight: medium
+        font-size: 14px
+
+        a
+            display: flex
+            justify-content: center
+            align-items: center
+            padding: 0 (gap / 2)
+            height: 100%
+            color: currentColor
+
+        .ico
+            width: 18px
+            height: 23px
+
+            @media media-min-lg
+                margin-right: 8px
+
+        .qtd
+            position: absolute
+            top: 0
+            right: 0
+            display: flex
+            justify-content: center
+            align-items: center
+            width: 20px
+            height: 20px
+            border-radius: 50%
+            background: var(--color-red)
+            color: white
+            font-weight: bold
+            font-size: 12px
+            line-height: 1
+
+        .text
+            @media media-max-lg
+                display: none
+
+    &__content
+        display: none !important

@@ -1235,7 +1235,7 @@ $j.fn.neonTheme.custom = {
     m_search: true, // ativa o responsivo da Busca
     m_filters: true, // ativa o responsivo dos Filtros do Catálogo
     m_myaccount: true, // ativa o responsivo da Minha Conta
-    m_mycart: true, // ativa o responsivo do Meu Carrinho
+    m_mycart: false, // ativa o responsivo do Meu Carrinho
     m_parcelamento: true, // ativa o responsivo do parcelamento na página de produto
     m_frete: true, // ativa o responsivo do cálculo de frete na página do produto
     m_produto: true, // ativa o responsivo de cada bloco da página de produto
@@ -1353,7 +1353,7 @@ function categoriesTitle() {
             item.querySelector('.a--0').textContent.trim()
         const child = item.querySelector('.box--1')
 
-        child.setAttribute('data-title', title)
+        $j(child).prepend(`<div class="categories__title">${title}</div>`)
     })
 }
 
@@ -1425,6 +1425,16 @@ function createRootVariableRGB() {
     })
 }
 
+function adjustMenu($) {
+    const posLeft = $('.categories .ul--0').offset().left
+
+    if (posLeft) {
+        $('.categories__title, .categories .ul--1').css({
+            paddingLeft: `${posLeft + 16}px`,
+        })
+    }
+}
+
 $j(document)
     .ready(function ($) {
         // document.ready
@@ -1433,8 +1443,12 @@ $j(document)
 
         // Scrolling
         scrollTop()
+
         // Categories title
         categoriesTitle()
+
+        // Ajuste do Menu a esquerda desktop
+        adjustMenu($)
 
         // Menu Categories
         $('.categories .parent').click(function (event) {
@@ -1442,10 +1456,46 @@ $j(document)
                 $(event.target).toggleClass('on')
             }
         })
+
+        // icones
+        addSVG({
+            'z-facebook': {
+                selector: '.ico-facebook a',
+                mode: 'prepend',
+            },
+            'z-instagram': {
+                selector: '.ico-instagram a',
+                mode: 'prepend',
+            },
+            'z-whatsapp': {
+                selector: '.ico-whatsapp a',
+                mode: 'prepend',
+            },
+            'z-user': {
+                selector: '.ico-user a',
+                mode: 'prepend',
+            },
+            'z-menu': {
+                selector: '.ico-menu a',
+                mode: 'prepend',
+            },
+            'z-chat': {
+                selector: '.ico-chat a',
+                mode: 'prepend',
+            },
+            'z-down': {
+                selector:
+                    '.categories .li--0.parent .a--0, .categories .li--0.categories__all .a--0',
+                mode: 'append',
+            },
+        })
     })
     .on('resizeStop', function (e) {
         // Safe window.resize
         // Dispara apÃ³s o Ãºltimo movimento de resize parar no navegador.
+
+        // Ajuste do Menu a esquerda desktop
+        adjustMenu($)
     })
     .on('scrollStop', function (e) {
         // Safe window.scroll
