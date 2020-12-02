@@ -1538,6 +1538,10 @@ $j(document)
                     '.categories .li--0.parent .a--0, .categories .li--0.categories__all .a--0',
                 mode: 'append',
             },
+            'z-sep': {
+                selector: '.breadcrumb__sep',
+                mode: 'html',
+            },
         })
 
         // Banner página de catalogo

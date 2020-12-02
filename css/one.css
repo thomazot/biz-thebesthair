@@ -11848,6 +11848,25 @@ body {
   max-width: calc(100% - 32px);
   width: 76rem;
 }
+.breadcrumb .ico {
+  width: 0.31rem;
+  height: 0.75rem;
+  color: var(--primary);
+}
+.breadcrumb__home .breadcrumb__link:before {
+  display: none;
+}
+.breadcrumb__link {
+  color: var(--color-text-gray);
+  font-weight: 500;
+  font-size: 0.75rem;
+}
+.breadcrumb__last {
+  display: block;
+  color: var(--primary);
+  font-weight: 500;
+  font-size: 0.75rem;
+}
 
 .categories__show {
   order: -1;

@@ -2,3 +2,23 @@
     margin: 0 auto
     max-width: 'calc(100% - %s)' % gap
     width: viewport
+
+    .ico
+        width: 5px
+        height: 12px
+        color: var(--primary)
+
+    &__home
+        .breadcrumb__link:before
+            display: none
+
+    &__link
+        color: var(--color-text-gray)
+        font-weight: medium
+        font-size: 12px
+
+    &__last
+        display: block
+        color: var(--primary)
+        font-weight: medium
+        font-size: 12px
