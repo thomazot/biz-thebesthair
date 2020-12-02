@@ -1,0 +1,33 @@
+.socials
+    &__name
+        display: block
+        font-weight: medium
+        font-size: 14px
+
+    &__link
+        display: flex
+        justify-content: flex-start
+        align-items: center
+
+    &__svg
+        margin-right: 10px
+
+    .facebook-f-ico
+        padding: 3px 3px 0 6px
+        width: 16px
+        height: 16px
+        border-radius: 2px
+        background: var(--facebook)
+
+        &, path
+            fill: var(--primary) !important
+
+        + style + .socials__name
+            color: var(--facebook)
+
+    .instagram-cam-ico
+        width: 16px
+        height: 16px
+
+        + style + .socials__name
+            color: var(--instagram)
