@@ -12102,6 +12102,15 @@ body {
   font-weight: 500;
   font-size: 0.88rem;
 }
+@media (min-width: 993px) {
+  .footer .mymenu .a--0:not([href='#']):hover {
+    text-decoration: underline;
+  }
+}
+.footer .mymenu .a--0[href='#'] {
+  cursor: auto;
+  pointer-events: none;
+}
 .footer .mymenu .li--0 {
   margin-bottom: 1.25rem;
 }
@@ -12112,9 +12121,6 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-}
-.footer .mymenu .ico-whatsapp .a--0[href*='#'] {
-  pointer-events: none;
 }
 .footer .mymenu .ico-whatsapp .a--0 .ico {
   margin-right: 0.63rem;
