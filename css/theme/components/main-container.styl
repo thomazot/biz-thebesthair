@@ -5,3 +5,21 @@
 
 .col-main
     padding: 0
+
+.main
+    display: flex
+    margin: 0 auto
+    max-width: 100%
+    width: (viewport + gap)
+
+    .col-left, .col-right
+        flex: 0 1 280px
+
+    .col-left, .col-right, .col-main
+        margin: (gap / 2)
+        padding: 0
+        max-width: none
+
+    .col-main
+        flex: 1
+        min-width: 0
