@@ -1233,7 +1233,7 @@ $j.fn.neonTheme.custom = {
     fix_IE_SVGs: true, // corrige as dimensões de SVGs inline no IE
     fix_zoomHeader: true, // corrige o z-index do .header e do zoom dos produtos no :hover de cada um
     fix_address_phone: true, // corrige a exibição do ícone de telefone nas listagens de endereços
-    fix_category_description: true, // troca a posição padrão da descrição da categoria
+    fix_category_description: false, // troca a posição padrão da descrição da categoria
     fix_catalog_flexbox: true, // adiciona elementos para arrumar o flexbox do catálogo
     /* - Responsivo */
     m_categories: true, // ativa o responsivo do Menu de Categorias
@@ -1448,9 +1448,43 @@ function adjustMenu($) {
     }
 }
 
+function isInViewport(el) {
+    const rect = el.getBoundingClientRect()
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <=
+            (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <=
+            (window.innerWidth || document.documentElement.clientWidth)
+    )
+}
+
+function productCallToActionViewport() {
+    const box = document.querySelector('.prod__shop .add-to-cart')
+    const body = document.querySelector('body')
+    const check = () => {
+        if (!box) return
+
+        if (isInViewport(box)) {
+            body.classList.remove('is-hide-call-to-action')
+        } else {
+            body.classList.add('is-hide-call-to-action')
+        }
+    }
+
+    check()
+
+    document.addEventListener('scroll', check, {
+        passive: true,
+    })
+}
+
 $j(document)
     .ready(function ($) {
         // document.ready
+        const breadcrumb = $('.breadcrumb')
+
         // Create variable rgb
         createRootVariableRGB()
 
@@ -1462,6 +1496,9 @@ $j(document)
 
         // Ajuste do Menu a esquerda desktop
         adjustMenu($)
+
+        // Produto exibe o botao comprar no viewport
+        productCallToActionViewport($)
 
         // Menu Categories
         $('.categories .parent').click(function (event) {
@@ -1501,7 +1538,32 @@ $j(document)
                     '.categories .li--0.parent .a--0, .categories .li--0.categories__all .a--0',
                 mode: 'append',
             },
+            'z-sep': {
+                selector: '.breadcrumb__sep',
+                mode: 'html',
+            },
         })
+
+        // Banner página de catalogo
+
+        const bannerCategory = $('.category-image')
+        const descriptionCategory = $('.category-description')
+
+        if (bannerCategory.length && breadcrumb.length) {
+            breadcrumb.after(bannerCategory)
+
+            if (descriptionCategory.length) {
+                bannerCategory.after(descriptionCategory)
+            }
+        } else {
+            if (descriptionCategory.length) {
+                bannerCategory.after(descriptionCategory)
+            }
+        }
+
+        if (descriptionCategory.length) {
+            descriptionCategory.show()
+        }
     })
     .on('resizeStop', function (e) {
         // Safe window.resize

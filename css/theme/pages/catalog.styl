@@ -1,0 +1,68 @@
+.catalog-category-view
+    .main
+        .banner
+            margin-bottom: 44px
+
+    .main-container
+        max-width: 100%
+        width: 100%
+        border-bottom: solid 1px var(--color-border)
+
+.category-title
+    display: none
+
+.category-image
+    container()
+
+    margin-bottom: 20px !important
+
+.category-description
+    container()
+
+    padding: 0
+    border: 0
+    color: var(--primary)
+    font-weight: regular
+    font-size: 14px
+
+    h3
+        display: flex
+        justify-content: flex-start
+        align-items: center
+        font-weight: medium
+        font-size: 18px
+
+        &:after
+            flex: 1
+            margin-left: (gap / 2)
+            min-width: 0
+            height: 1px
+            background: var(--color-border)
+            content: ''
+
+    div
+        @media media-min-lg
+            display: flex
+            align-items: center
+
+    p
+        flex: 1
+        margin: 0
+        min-width: 0
+
+    a
+        display: flex
+        flex: 0 0 125px
+        justify-content: center
+        align-items: center
+        margin-left: 40px
+        width: 125px
+        height: 45px
+        background: var(--button)
+        color: var(--button-contrast)
+        font-weight: regular
+        font-size: 14px
+
+        @media media-max-lg
+            margin-top: 20px
+            margin-left: auto

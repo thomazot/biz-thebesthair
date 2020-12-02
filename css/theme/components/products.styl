@@ -6,6 +6,9 @@
         font-weight: medium
         font-size: 20px
 
+    &__item
+        padding: 0
+
     &__actions
         margin-top: auto
         margin-right: -(gap / 2)
@@ -78,3 +81,12 @@
 
         &:hover
             color: @color
+
+    &--list
+        .products
+            &__actions
+                margin-top: 0
+                margin-left: auto
+                padding-right: 16px
+                opacity: 1
+                transform: none

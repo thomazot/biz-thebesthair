@@ -58,6 +58,14 @@
             font-weight: medium
             font-size: 14px
 
+            &:not([href='#']):hover
+                @media media-min-lg
+                    text-decoration: underline
+
+            &[href='#']
+                cursor: auto
+                pointer-events: none
+
         .li--0
             margin-bottom: 20px
 
@@ -68,9 +76,6 @@
                 display: flex
                 justify-content: flex-start
                 align-items: center
-
-                &[href*='#']
-                    pointer-events: none
 
                 .ico
                     margin-right: 10px
