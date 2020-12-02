@@ -1,0 +1,47 @@
+.toolbar
+    .limiter
+        display: none
+
+    .amount
+        &, span
+            color: var(--color-text-gray)
+            font-weight: medium
+            font-size: 12px
+
+    .view-mode
+        @media media-min-lg
+            margin-right: 40px
+
+            &:before
+                padding-right: 10px
+                color: var(--primary)
+                content: 'Exibir: '
+                font-weight: medium
+                font-size: 12px
+
+        svg
+            width: 14px
+            height: 10px
+
+    .sort-by
+        label
+            text-transform: lowercase
+            font-weight: medium
+            font-size: 14px
+            opacity: 1
+
+            &:first-letter
+                text-transform: uppercase
+
+        select
+            padding: 0 16px
+            max-width: 100%
+            width: 200px
+            height: 50px
+            border: 1px solid var(--color-border)
+            background: #fff url(down) center right 15px no-repeat
+            box-shadow: 0 0 10px rgba(0, 0, 0, .1)
+            color: var(--color-text-gray)
+            font-weight: medium
+            font-size: 14px
+            appearance: none
