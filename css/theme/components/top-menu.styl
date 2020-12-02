@@ -1,0 +1,44 @@
+#top-menu
+    height: 44px
+    border-bottom: solid 1px var(--color-border)
+
+    .ul--0
+        container()
+
+        display: flex
+        justify-content: space-between
+        align-items: center
+        height: 100%
+
+    .a--0
+        display: flex
+        justify-content: center
+        align-items: center
+        color: currentColor
+        font-weight: medium
+        font-size: 14px
+
+        .ico
+            width: 18px
+            height: 18px
+
+            @media media-min-lg
+                margin-right: 10px
+
+        span
+            @media media-max-lg
+                display: none
+
+    .li--0
+        margin-bottom: 0
+        color: var(--primary)
+
+        &.ico
+            &-facebook
+                color: var(--facebook)
+
+            &-instagram
+                color: var(--instagram)
+
+            &-whatsapp
+                color: var(--whatsapp)

@@ -1,0 +1,50 @@
+.search
+    .header &
+        &__button
+            .ico
+                width: 19px
+                height: 23px
+                fill: currentColor
+
+        @media media-min-sm
+            margin: 0 35px
+
+            &__input
+                padding-right: 50px
+                height: 50px
+                border: solid 1px var(--color-border)
+                box-shadow: 0 0 10px rgba(0, 0, 0, .1)
+                color: var(--primary)
+                font-weight: regular
+                font-size: 14px
+
+                &::placeholder
+                    color: var(--color-gray)
+                    font-weight: medium
+
+                &:focus::placeholder
+                    color: transparent
+
+                &:focus, &:hover, &:focus-within
+                    box-shadow: 0 0 10px rgba(0, 0, 0, .2)
+
+            &__button
+                position: absolute
+                right: 0
+                height: 50px
+                background: none
+                box-shadow: none
+                color: var(--primary)
+
+        @media media-max-sm
+            &__hide
+                top: 44px
+
+            &__button
+                background: var(--primary-contrast)
+                color: var(--primary)
+
+            &.on
+                .search
+                    &__form .input-box
+                        top: 44px

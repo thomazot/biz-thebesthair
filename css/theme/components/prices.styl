@@ -1,0 +1,39 @@
+.price-box
+    .products &
+        display: flex
+
+        .old-price
+            margin-right: 10px
+            margin-bottom: 0
+
+            .label
+                display: none
+
+            .price span
+                color: var(--color-text-gray)
+                font-weight: medium
+                font-size: 14px
+
+        .special-price, .regular-price
+            margin-bottom: 0
+
+            .label
+                display: none
+
+            .price span
+                color: var(--primary)
+                font-weight: medium
+                font-size: 18px
+
+.price-box-parcelado
+    .preco-parcelado
+        .s-juros
+            display: none
+
+        &:after
+            content: 'cartão de crédito'
+
+        &, .num span, .de span, .value span
+            color: var(--primary)
+            font-weight: medium
+            font-size: 14px

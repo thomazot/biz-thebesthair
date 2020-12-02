@@ -1,0 +1,113 @@
+.instagram
+    insta-width = 754
+    insta-height = 498
+
+    &
+        background: var(--primary)
+        color: var(--primary-contrast)
+
+    &__container
+        container()
+
+        padding: 45px 0
+
+        @media media-min-lg
+            display: flex
+            justify-content: space-between
+            align-items: center
+
+    &__header
+        padding-bottom: 40px
+        text-align: center
+        font-weight: medium
+        font-size: 14px
+
+        a
+            display: block
+            padding-bottom: 15px
+            color: currentColor
+            font-weight: bold
+            font-size: 20px
+
+        p
+            margin: 0 auto
+            max-width: 100%
+            width: 240px
+
+    &__main
+        position: relative
+        max-width: 100%
+        width: '%spx' % insta-width
+        height: '%spx' % insta-height
+
+        @media media-max-sm
+            height: '%spx' % (insta-height / 2)
+
+        a
+            display: block
+            transition: all .2s ease-in-out
+
+            img
+                width: 100%
+                height: 100%
+                transition: all .2s ease-in-out
+                object-fit: cover
+
+            &:nth-child(1)
+                position: absolute
+                top: '%s%' % ((50 / insta-height) * 100)
+                left: 0
+                z-index: 2
+                width: '%s%' % ((264 / insta-width) * 100)
+                height: '%s%' % ((241 / insta-height) * 100)
+
+            &:nth-child(2)
+                position: absolute
+                top: '%s%' % ((90 / insta-height) * 100)
+                left: 50%
+                z-index: 1
+                width: '%s%' % ((295 / insta-width) * 100)
+                height: '%s%' % ((325 / insta-height) * 100)
+                transform: translateX(-50%)
+
+            &:nth-child(3)
+                position: absolute
+                top: 0
+                right: 0
+                z-index: 3
+                width: '%s%' % ((256 / insta-width) * 100)
+                height: '%s%' % ((254 / insta-height) * 100)
+
+            &:nth-child(4)
+                position: absolute
+                bottom: '%s%' % ((20 / insta-height) * 100)
+                left: '%s%' % ((20 / insta-height) * 100)
+                z-index: 2
+                width: '%s%' % ((215 / insta-width) * 100)
+                height: '%s%' % ((214 / insta-height) * 100)
+
+            &:nth-child(5)
+                position: absolute
+                right: 0
+                bottom: 0
+                z-index: 0
+                width: '%s%' % ((230 / insta-width) * 100)
+                height: '%s%' % ((247 / insta-height) * 100)
+
+            &:hover
+                @media media-min-lg
+                    z-index: 10
+
+                    img
+                        transform: scale(1.05)
+
+/*
+caixa 754 x 498
+
+
+1 - 264 x 241
+2 - 280 x 317
+3 - 256 x 254
+4 - 215 x 214
+5 - 230 x 247
+*/

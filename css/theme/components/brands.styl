@@ -1,0 +1,39 @@
+.brands
+    container()
+
+    @media media-min-lg
+        display: flex
+        justify-content: flex-start
+        align-items: center
+
+    &:before
+        @media media-min-lg
+            flex: 0 1 176px
+            margin-right: 50px
+            content: 'Compre por Marca'
+            font-weight: medium
+            font-size: 18px
+
+    &__list
+        flex: 1
+        min-width: 0
+
+        .owl-wrapper-outer
+            border: 0
+
+    &__item
+        a
+            border: 0
+
+        img
+            max-width: 140px
+            max-height: 30px
+            filter: grayscale(1)
+            opacity: .3
+            transition: all .2s ease-in-out
+
+        &:hover
+            img
+                @media media-min-lg
+                    filter: grayscale(0)
+                    opacity: 1
