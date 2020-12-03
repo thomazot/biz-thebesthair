@@ -1,0 +1,323 @@
+.cart
+    .qty-wrapper
+        width: 65px
+
+    .page-title
+        h1
+            display: flex
+            justify-content: flex-start
+            align-items: center
+            margin: 0
+            height: 50px
+            color: var(--primary)
+            text-align: left
+            font-weight: medium
+            font-size: 16px
+
+        .cart__links
+            margin: 0
+
+            @media media-min-lg
+                margin-top: -50px
+
+            @media media-max-lg
+                margin: 20px 0
+
+    &__links
+        margin: 0 0 50px
+
+        @media media-max-lg
+            display: block
+
+        .btn-checkout
+            position: relative
+            margin-left: auto
+            max-width: 100%
+            width: 350px
+            height: 55px
+            border-radius: 0
+            background: var(--button)
+            box-shadow: none
+            color: var(--button-contrast)
+            text-transform: none
+            font-weight: medium
+            font-size: 16px
+
+            @media media-max-lg
+                width: 100%
+
+            &:after
+                content: 'Finalizar Compra'
+
+            &:hover
+                background: @background
+
+            span
+                display: none
+
+        .btn--outline
+            padding: 0
+            width: 340px
+            height: 55px
+            background: #EFEFEF
+            box-shadow: none
+            color: var(--primary)
+            text-transform: none
+            font-weight: medium
+            font-size: 16px
+
+            @media media-max-lg
+                padding: 15px 0
+                width: 100%
+
+            &:hover
+                color: var(--primary)
+
+            span
+                display: none
+
+            &:before
+                content: 'Continuar Comprando'
+
+.cart-table
+    footer, .sku, .item-options
+        display: none
+
+    header
+        height: 50px
+        background: var(--primary)
+        color: var(--primary-contrast)
+        text-transform: none
+        font-weight: medium
+        font-size: 16px
+
+    .product-image
+        border: solid 1px var(--color-border)
+
+    h2.name
+        a
+            color: currentColor
+            font-weight: medium
+            font-size: 14px
+
+    main
+        border: solid 1px var(--color-border)
+        background: #ffffff
+        box-shadow: 0 0 0 1px var(--color-border)
+
+    .btn-remove
+        color: var(--primary)
+        text-indent: 0
+        opacity: 1
+        bakcground: none
+
+        &:before
+            display: none
+
+        .ico
+            width: 16px
+            height: 23px
+            fill: currentColor
+
+        &:hover
+            background: none
+            color: @color
+
+.cart__boxes
+    margin: 40px 0
+
+    .shipping, .coupon
+        box-shadow: none
+
+    .shipping
+        @media media-min-lg
+            display: flex
+            align-items: center
+
+        .title
+            display: flex
+            justify-content: flex-start
+            align-items: center
+            margin-right: 10px
+            font-weight: semibold
+            font-size: 16px
+
+            .ico
+                margin-right: 5px
+                width: 30px
+                height: 28px
+
+        &__form
+            position: relative
+
+        &__action
+            @media media-min-lg
+                .btn
+                    position: absolute
+                    top: 50%
+                    right: 0
+                    height: 50px
+                    background: none
+                    box-shadow: none
+                    color: var(--primary)
+                    text-transform: none
+                    font-weight: bold
+                    font-size: 14px
+                    transform: translateY(-50%)
+
+        &__postcode
+            label
+                display: none
+
+        .buttons-set
+            @media media-min-lg
+                margin-bottom: 0
+
+        .shipping-desc, .shipping-postcode label
+            display: none
+
+        > h2
+            display: flex
+            justify-content: flex-start
+            align-items: center
+            font-size: 0
+
+            @media media-min-lg
+                margin-right: 10px
+                margin-bottom: 0
+
+            .ico
+                margin-right: 5px
+                width: 27px
+                height: 19px
+                fill: var(--primary)
+
+            &:after
+                color: #333333
+                content: 'Calcule o frete e prazo'
+                font-weight: medium
+                font-size: 13px
+
+        .shipping-postcode
+            margin: 0
+
+        #shipping-zip-form
+            display: flex
+
+            #postcode
+                height: 50px
+                border: solid 1px var(--color-border)
+                box-shadow: 0 0 10px rgba(0, 0, 0, .1)
+
+            .button2
+                display: flex
+                justify-content: center
+                align-items: center
+                height: 32px
+                background: none
+                box-shadow: none
+                color: var(--primary)
+                font-weight: bold
+                font-size: 14px
+
+                span
+                    display: none
+
+                &:before
+                    content: 'OK'
+
+    .coupon
+        > .title
+            display: flex
+            justify-content: center
+            align-items: center
+            color: #333
+            text-transform: none
+            font-weight: medium
+            font-size: 16px
+            line-height: 1.3
+
+            @media media-min-lg
+                margin-bottom: 0
+                line-height: 32px
+                cursor: pointer
+
+            &:before
+                margin-right: 3px
+                color: var(--color-text-gray)
+                content: 'Possui um cupom de desconto? '
+
+            &:after
+                content: 'Clique para inserir'
+
+            .ico
+                flex: 0 0 auto
+                order: -1
+                margin-right: 5px
+                width: 20px
+                height: 16px
+                fill: var(--primary)
+
+            span
+                display: none
+
+        &__form
+            @media media-min-lg
+                display: none
+
+        &.on
+            .coupon__form
+                @media media-min-lg
+                    display: flex
+
+.card__totals
+    margin-left: auto
+    max-width: 100%
+    width: 350px
+
+    @media media-max-lg
+        width: 100%
+
+    .totals
+        padding-bottom: 0
+        box-shadow: none
+
+        .title
+            display: none
+
+        .totals__table
+            border: solid 1px var(--color-border)
+
+            td
+                font-weight: medium
+                font-size: 16px
+
+                strong
+                    font-weight: medium
+
+                &:last-child
+                    font-size: 24px
+
+            tbody
+                td
+                    padding: 16px
+                    border-bottom: solid 1px #e5e5e5 !important
+
+            tfoot
+                td
+                    padding: 15px
+                    color: var(--primary)
+
+.crosssell
+    &__title
+        text-align: center
+        text-transform: uppercase
+        font-weight: bold
+        font-size: 26px
+
+    .products__case
+        > button
+            display: none
+
+    .owl-wrapper-outer
+        padding: 10px 0

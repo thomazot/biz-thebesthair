@@ -1,0 +1,23 @@
+<div class="page-title">
+	<h1><span>Minhas Compras</span></h1>
+    <div class="cart__links">
+        @bt(finalizar "Finalizar")
+    </div>
+</div>
+
+@tabela-produtos
+@aviso-frete-gratis
+
+<div class="cart__boxes">
+	@simulador-frete
+    @cupom
+</div>
+
+<div class="card__totals">
+    @totais
+</div>
+
+<div class="cart__links">
+	@bt(continuar-comprando "continuar comprando")
+	@bt(finalizar "Finalizar")
+</div>

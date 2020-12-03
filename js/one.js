@@ -1567,8 +1567,16 @@ $j(document)
                 mode: 'prepend',
             },
             'z-truck': {
-                selector: '.frete__title',
+                selector: '.frete__title, .cart__boxes .shipping > .title',
                 mode: 'prepend',
+            },
+            'z-cupom': {
+                selector: '.cart__boxes .coupon > .title',
+                mode: 'prepend',
+            },
+            'z-trash': {
+                selector: '.cart-table .btn-remove',
+                mode: 'html',
             },
         })
 
@@ -1592,6 +1600,11 @@ $j(document)
         if (descriptionCategory.length) {
             descriptionCategory.show()
         }
+
+        // pagina de carrinho
+        $('.coupon > .title').click(function () {
+            $(this).closest('.coupon').toggleClass('on')
+        })
     })
     .on('resizeStop', function (e) {
         // Safe window.resize
