@@ -1,0 +1,98 @@
+.reviews
+    @media media-max-sm
+        container()
+
+    @media media-min-sm
+        padding-top: 50px
+        border-top: solid 1px var(--color-border)
+
+        &__title, &__content
+            container()
+
+    .subtitle
+        color: var(--text-two)
+        font-weight: medium
+        font-size: 16px
+
+    &__no-reviews
+        @media media-max-lg
+            padding-top: 0
+            padding-bottom: 20px
+            text-align: left
+
+    &__title, &__content
+        @media media-min-sm
+            container()
+
+    &__content
+        @media media-max-lg
+            flex-wrap: wrap
+
+    &__title
+        titleCollateral()
+
+        @media media-min-sm
+            padding: 50px 0 0
+
+    &__resume, &__ratings, &__add
+        padding: 0
+        box-shadow: none
+
+    &__resume
+        @media media-min-lg
+            flex: 0 1 190px
+            margin-right: 80px
+
+        .rating-box
+            display: none !important
+
+        .product-rate
+            align-items: flex-start
+
+            .amount
+                color: var(--text-two)
+                font-weight: regular
+                font-size: 14px
+
+    &__no-reviews.std
+        p
+            display: inline
+            color: var(--text-two)
+            font-size: 14px
+
+    &__add
+        @media media-min-lg
+            flex: 0 1 385px
+
+        @media media-max-lg
+            flex: 0 0 100%
+            margin-left: 0
+
+        .review-summary
+            justify-content: flex-start
+
+        .title
+            color: var(--text-two)
+            font-weight: regular
+            font-size: 14px
+
+            span
+                display: block
+
+        .form-list
+            label
+                color: var(--text-two)
+                font-weight: regular
+                font-size: 14px
+
+            input, select, textarea
+                border: 1px solid var(--color-border)
+                box-shadow: 0 0 10px rgba(0, 0, 0, .1)
+
+        .btn
+            border-radius: 0
+            background: var(--button)
+            box-shadow: none
+            color: var(--button-contrast)
+            font-weight: bold
+            font-size: 16px

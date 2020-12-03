@@ -1470,6 +1470,33 @@ function productCallToActionViewport() {
     })
 }
 
+function joinsaleAdjuste($) {
+    $('.jointsales__row').each(function () {
+        const essential = $('<div class="jointsales__essential"></div>')
+        const currentName = $('.jointsales__currentin .title').text()
+        const productNames = []
+
+        productNames.push(currentName)
+
+        $('.jointsales__item .title').each(function () {
+            productNames.push($(this).text())
+        })
+
+        essential.prepend(
+            $('<div class="jointsales__name-product"></div>').html(
+                productNames.join('<span class="more-name">+</span>')
+            )
+        )
+
+        $(
+            '.jointsales__totals, .jointsales__payments, .jointsales__action',
+            this
+        ).wrapAll(essential)
+
+        $(this).addClass('on')
+    })
+}
+
 $j(document)
     .ready(function ($) {
         // document.ready
@@ -1489,6 +1516,9 @@ $j(document)
 
         // Produto exibe o botao comprar no viewport
         productCallToActionViewport($)
+
+        // CompreJunto ajuste
+        joinsaleAdjuste($)
 
         // Menu Categories
         $('.categories .parent').click(function (event) {
