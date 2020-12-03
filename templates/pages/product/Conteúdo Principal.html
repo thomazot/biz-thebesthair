@@ -48,7 +48,6 @@
 			@marca
 		</div>
         @if(is_disponivel)
-        @variacoes
         <div class="prod__prices">
 			@preco
 			@preco(parcelado)	
@@ -56,9 +55,7 @@
 
         <div class="prod__call-to-actions">
             @bt(comprar)
-            @links
         </div>
-        @simulador-frete
 		@else(is_disponivel)		
 			<div class="prod__esgotado">
 				<div class="title title--sm">Produto Esgotado</div>

@@ -103,12 +103,6 @@ const navigationText = [
          * addSVG() - defaults
          */
         if (neon.default_SVGs !== false) {
-            var truck = {
-                'img-truck': {
-                    selector: '.frete__title',
-                    mode: 'append',
-                },
-            }
             var svgs = {
                 'img-truck': {
                     selector:
@@ -163,7 +157,6 @@ const navigationText = [
             }
             $j(document).ready(function () {
                 addSVG(svgs)
-                addSVG(truck)
             })
         }
         if (neon.addSVG !== false) {
@@ -1242,7 +1235,7 @@ $j.fn.neonTheme.custom = {
     m_myaccount: true, // ativa o responsivo da Minha Conta
     m_mycart: false, // ativa o responsivo do Meu Carrinho
     m_parcelamento: true, // ativa o responsivo do parcelamento na página de produto
-    m_frete: true, // ativa o responsivo do cálculo de frete na página do produto
+    m_frete: false, // ativa o responsivo do cálculo de frete na página do produto
     m_produto: true, // ativa o responsivo de cada bloco da página de produto
     m_tabs: true, // ativa o responsivo do componente .tabs do tema
     m_painelCliente: true, // ativa o responsivo do Menu do Painel de Cliente
@@ -1251,11 +1244,6 @@ $j.fn.neonTheme.custom = {
      */
     dropFrom: false,
     addSVG: {
-        'img-truck': {
-            selector: '.frete .frete__content .input-box label',
-            mode: 'prepend',
-            ratio: false,
-        },
         'z-prev': {
             selector: '.owl-prev',
             mode: 'html',
@@ -1439,12 +1427,14 @@ function createRootVariableRGB() {
 }
 
 function adjustMenu($) {
-    const posLeft = $('.categories .ul--0').offset().left
+    if ($('.categories .ul--0').length) {
+        const posLeft = $('.categories .ul--0').offset().left
 
-    if (posLeft) {
-        $('.categories__title, .categories .ul--1').css({
-            paddingLeft: `${posLeft + 16}px`,
-        })
+        if (posLeft) {
+            $('.categories__title, .categories .ul--1').css({
+                paddingLeft: `${posLeft + 16}px`,
+            })
+        }
     }
 }
 
@@ -1542,6 +1532,14 @@ $j(document)
                 selector: '.breadcrumb__sep',
                 mode: 'html',
             },
+            'z-heart': {
+                selector: '.add-to-links .link-wishlist a',
+                mode: 'prepend',
+            },
+            'z-truck': {
+                selector: '.frete__title',
+                mode: 'prepend',
+            },
         })
 
         // Banner página de catalogo
@@ -1570,7 +1568,7 @@ $j(document)
         // Dispara apÃ³s o Ãºltimo movimento de resize parar no navegador.
 
         // Ajuste do Menu a esquerda desktop
-        adjustMenu($)
+        adjustMenu($j)
     })
     .on('scrollStop', function (e) {
         // Safe window.scroll
