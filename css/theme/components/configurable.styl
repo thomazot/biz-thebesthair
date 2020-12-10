@@ -1,0 +1,25 @@
+.configurable
+    &:before
+        display: none
+
+    &__caption
+        font-weight: medium
+        font-size: 18px
+
+    .configurable-swatch-list
+        a.has-image
+            min-width: 0
+            box-shadow: none
+
+            img
+                width: 20px
+                height: 20px
+                border-radius: 50%
+                object-fit: cover
+
+        .selected
+            a.has-image
+                background: none
+
+                img
+                    box-shadow: unquote('0 0 0 2px var(--primary-contrast), 0 0 0 4px rgba(var(--primary-rgb), .3)')

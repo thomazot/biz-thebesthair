@@ -1,0 +1,55 @@
+qty-height = 55px
+qty-background = #efefef
+
+.qty-wrapper
+    height: qty-height
+    background: qty-background
+
+    .bt-box
+        display: contents
+
+    .input-box
+        display: flex
+        align-items: stretch
+        height: 100%
+
+    input
+        flex: 1
+        padding: 0 !important
+        min-width: 20px
+        width: auto
+        height: 100% !important
+        border: 0 !important
+        background: none
+        box-shadow: none !important
+        font-weight: bold
+        font-size: 16px
+
+    .bt.less, .bt.plus
+        display: flex
+        flex: 0 0 20px
+        justify-content: center
+        align-items: center
+        padding: 0 8px
+        height: auto
+        border-radius: 0
+        background: none
+        color: unquote('rgba(var(--primary-rgb), .2)')
+        font-weight: bold
+        font-size: 16px
+
+        &:before
+            display: none
+
+        span
+            display: flex
+            justify-content: center
+            align-items: center
+            line-height: 1
+
+        &:hover
+            background: @background
+            color: var(--primary)
+
+    .less
+        order: -1

@@ -1,0 +1,187 @@
+.catalog-product-view
+    .main
+        width: 100%
+
+    .col-main
+        margin: 0
+        max-width: 100%
+
+.product-essential
+    container()
+
+.product-collateral
+    margin-top: 20px
+    padding-top: 0
+    border-top: solid 1px var(--color-border)
+
+.prod
+    &__fixed
+        position: fixed
+        right: 0
+        z-index: 100
+        visibility: hidden
+        padding: 20px
+        max-width: 100%
+        width: 350px
+        border: solid 1px var(--color-border)
+        background: white
+        transition: all .4s ease-in-out
+        transition-delay: .1s
+        transform: translateX(100%)
+
+        @media media-max-lg
+            display: none
+
+        .is-hide-call-to-action &
+            visibility: visible
+            transform: translateX(0)
+
+    &__name
+        h1, h2
+            font-weight: medium
+
+        h1
+            font-size: 26px
+
+        h2
+            font-size: 16px
+
+        .brand
+            padding-top: 7px
+            padding-bottom: 26px
+            color: unquote('rgba(var(--primary-rgb, .3))')
+            font-weight: medium
+            font-size: 14px
+
+            .thumb
+                display: none
+
+            a
+                color: currentColor
+
+                &:before
+                    content: 'Marca: '
+
+                &:after
+                    content: attr(title)
+
+    &__short-desc
+        padding-bottom: 22px
+
+        h3
+            margin-bottom: 10px
+            color: var(--primary)
+            font-weight: semibold
+            font-size: 16px
+
+        .std
+            padding-bottom: 12px
+            color: var(--primary)
+            font-weight: regular
+            font-size: 14px
+
+        a
+            display: inline-block
+            background: none
+            color: var(--button)
+            font-weight: medium
+            font-size: 14px
+
+            &:hover
+                color: var(--button-hover)
+
+    &__esgotado
+        margin-bottom: 0
+
+        .title
+            margin-bottom: 0
+
+    &__shop
+        .add-to-cart
+            margin-bottom: 0
+
+        .col
+            flex: 1
+            min-width: 0
+
+        .frete
+            margin: 30px 0
+
+    &__call-to-actions
+        margin: -(gap / 2)
+        padding: 1px 0
+
+        @media media-min-lg
+            display: flex
+            justify-content: space-between
+
+        .add-to-cart, .add-to-links
+            margin: (gap / 2)
+
+        .add-to-cart
+            flex: 1
+            min-width: 0
+
+        .add-to-links
+            @media media-min-lg
+                flex: 0 0 190px
+
+.add-to-cart
+    .add-to-cart-buttons
+        display: flex
+
+        .qty-wrapper
+            flex: 0 0 65px
+            min-width: 0
+
+        .add-to-cart-btn
+            display: flex
+            flex: 1
+            justify-content: center
+            align-items: center
+            padding: 0 (gap / 2)
+            min-width: 0
+            height: 55px
+            border-radius: 0
+            box-shadow: none
+            font-weight: bold
+            font-size: 16px
+            line-height: 1
+
+.product-image-thumbs
+    .thumb-link
+        border-radius: 0
+        box-shadow: 0 0 0 1px var(--color-border)
+
+.product-image-gallery
+    box-shadow: 0 0 0 1px var(--color-border)
+
+@media media-min-lg
+    .prod
+        &__img
+            flex: 1
+            margin-right: gap
+            min-width: 0
+
+            .sharing-links
+                margin-left: 70 + gap
+
+        &__shop
+            flex: 0 1 490px
+            min-width: 0
+
+    .product-image-container
+        display: flex
+        width: 100%
+
+    .product-image
+        flex: 1
+        min-width: 0
+
+    .more-views
+        flex: 0 1 70px
+        order: -1
+        margin-right: gap
+
+    .product-image-thumbs
+        display: block

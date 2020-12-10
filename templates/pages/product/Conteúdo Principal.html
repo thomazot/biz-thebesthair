@@ -1,0 +1,66 @@
+<div class="prod__img">
+    @fotos
+    @compartilhar
+    @selos
+</div>
+<div class="prod__shop">	
+    <div class="col">
+        <div class="prod__name">
+			<h1>@nome</h1>
+			@marca
+		</div>
+        
+        @if(short_description)
+        <div class="prod__short-desc">
+            <h3>Descrição curta</h3>
+            <div class="std">
+                @descricao(curta)
+            </div>
+            <a href="#descriptions">Veja Mais</a>
+        </div>
+        @endif(short_description)
+
+        @if(is_disponivel)
+        @variacoes
+        <div class="prod__prices">
+			@preco
+			@preco(parcelado)	
+        </div>
+
+        <div class="prod__call-to-actions">
+            @bt(comprar)
+            @links
+        </div>
+        @simulador-frete
+		@else(is_disponivel)		
+			<div class="prod__esgotado">
+				<div class="title title--sm">Produto Esgotado</div>
+				@alertas
+			</div>
+		@endif(is_disponivel)
+    </div>
+</div>
+
+<div class="prod__fixed">
+    <div class="prod__fixed-container">
+        <div class="prod__name">
+			<h2>@nome</h2>
+			@marca
+		</div>
+        @if(is_disponivel)
+        <div class="prod__prices">
+			@preco
+			@preco(parcelado)	
+        </div>
+
+        <div class="prod__call-to-actions">
+            @bt(comprar)
+        </div>
+		@else(is_disponivel)		
+			<div class="prod__esgotado">
+				<div class="title title--sm">Produto Esgotado</div>
+				@alertas
+			</div>
+		@endif(is_disponivel)
+    </div>
+</div>
